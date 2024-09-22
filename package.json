@@ -1,6 +1,7 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "nuxt3-boilerplate",
+  "author": "Hamid Heydari",
+  "private": false,
   "type": "module",
   "scripts": {
     "build": "nuxt build",
