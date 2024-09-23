@@ -1,0 +1,33 @@
+/**
+ * Column
+ * *********************************/
+
+.v-col {
+  width: 100%;
+  float: right;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  &--gap {
+    padding-bottom: 10px;
+  }
+}
+
+@include make-column(xl);
+
+@media #{$lg-down} {
+  @include make-column(lg);
+}
+
+@media #{$md-down} {
+  @include make-column(md);
+}
+
+@media #{$sm-down} {
+  @include make-column(sm);
+}
+
+@media #{$xs-down} {
+  @include make-column(xs);
+}

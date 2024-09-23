@@ -1,0 +1,15 @@
+$columns: 12;
+
+@mixin make-column($size) {
+  @for $i from 0 through $columns {
+    @if $i>0 {
+      .v-col-#{$size}-#{$i} {
+        width: calc(100% / $columns) * $i;
+      }
+    }
+
+    .v-col-#{$size}-offset-#{$i} {
+      width: calc(100% / $columns) * $i;
+    }
+  }
+}

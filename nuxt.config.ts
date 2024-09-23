@@ -7,6 +7,12 @@ export default defineNuxtConfig({
   // Global CSS
   css: ['~/assets/styles/main.scss'],
 
+  // Globally Register Components
+  components: [
+    { path: "~/components/kit/VCol" },
+    { path: "~/components/kit/VRow" },
+  ],
+
   // Define Source Directory
   srcDir: './client',
 
@@ -19,5 +25,21 @@ export default defineNuxtConfig({
         file: resolve(__dirname, 'client/pages/home/index.vue')
       })
     }
-  }
+  },
+
+  vite: {
+    // Import SASS Variables, Functions, and Mixins
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+          @import "@/assets/styles/vars/_breakpoints.scss";
+          @import "@/assets/styles/mixins/_clearfix.scss";
+          @import "@/assets/styles/mixins/_grid.scss";
+          @import "@/assets/styles/mixins/_responsive.scss";
+          `,
+        },
+      },
+    },
+  },
 })
